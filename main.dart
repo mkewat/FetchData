@@ -25,8 +25,8 @@ class Demo extends StatefulWidget {
 
 class DemoState extends State<Demo> {
   Future<List<ListData>> listDataJSON() async {
-    final jsonEndpoint = "https://jsonplaceholder.typicode.com/photos";
-    final response = await get(jsonEndpoint);
+    final url = "https://jsonplaceholder.typicode.com/photos";
+    final response = await get(url);
     if (response.statusCode == 200) {
       List listData = json.decode(response.body);
       return listData
